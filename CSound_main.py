@@ -1,10 +1,14 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from skimage import io as skio
+# import matplotlib.pyplot as plt
+# import skimage.io as skio
+import skvideo.io as vidio
+# import imageio as imio
 
 if __name__ == '__main__':
-    filename = './images/IMG1.JPG'
-    a = skio.imread(filename)
-    plt.figure()
-    plt.imshow(a)
-    plt.show()
+    filename = './images/Wildlife.mp4'
+    vid = vidio.vread(filename)
+    print(vid.shape)
+    # vid = imio.get_reader(filename, 'ffmpeg')
+    # metadata = vid.get_meta_data()
+    # print(metadata)
+    # print('hi')
